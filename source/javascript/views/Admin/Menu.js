@@ -39,13 +39,13 @@ enyo.kind({
 
     components:[
         {kind:'FittableRows', style:'width:100%;', components:[
-            {kind:'onyx.Toolbar', style:'height:80px', components:[
+            {kind:'onyx.Toolbar', classes: "onlyToolbar", components:[
                 {
 					kind:'ImageButton',
 					type:'Exit',
 					ontap:'doBack'
 				},
-				{classes: "view-heading", content: "App verwalten"}
+				{classes: "view-heading", content: "Admin-Bereich"}
             ]},
             {kind:'Scroller', classes: 'onyx-menu onyx-picker', fit:true}
         ]}

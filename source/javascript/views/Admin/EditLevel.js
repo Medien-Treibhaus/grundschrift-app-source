@@ -50,7 +50,7 @@ enyo.kind({
                 {name:'thinning', caption:'Ausdünnung:', kind:"Grundschrift.Views.IntegerSlider", min:0, max:30, value:0, onChange:"publishValues"},
                 {name:'interpolation', caption:'Interpolation:', kind:"Grundschrift.Views.IntegerSlider", min:0, max:30, value:0, onChange:"publishValues"},
                 {name:'smoothness', caption:'Glättung:', kind:"Grundschrift.Views.IntegerSlider", min:0, max:50, value:0, onChange:"publishValues"},
-                {kind:'onyx.Button', content:'Änderungen fixieren', ontap:'applyModifications'}
+                {kind:'onyx.Button', content:'Änderungen speichern', ontap:'applyModifications'}
 
 
             ]},

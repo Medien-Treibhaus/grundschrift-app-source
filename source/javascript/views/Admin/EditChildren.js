@@ -13,10 +13,12 @@ enyo.kind({
     },
 
     components:[
-        {kind:'onyx.Toolbar', style:'height:80px', components:[
+        {kind:'onyx.Toolbar', style:'height:60px', classes: "adminToolbar", components:[
             {kind:'ImageButton', type:'Exit', ontap:'doBack'},
+            {classes: "view-heading", content: "Benutzer verwalten"}
+        ]},
+        {kind:'onyx.Toolbar', classes: "lastToolbar", style:'height:80px;', components:[
             {kind:'onyx.Button', content:'Benutzer hinzufügen', ontap:'addNewChild'},
-			{classes: "view-heading", content: "Benutzer verwalten"}
         ]},
 		{kind:'Grundschrift.Views.ChildGrid', fit:true, onChildSelected: 'childSelected'}
 	],

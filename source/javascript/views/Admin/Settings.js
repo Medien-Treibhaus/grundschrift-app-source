@@ -2,18 +2,16 @@ enyo.kind({
     kind:'Grundschrift.Views.Admin.BaseView',
     name:'Grundschrift.Views.Admin.Settings',
 
-	style: 'font-family: Fibel',
-
 	lastUpdateRequest: null,
 
     components:[
        // {kind:'FittableRows', style:'width:100%;', components:[
-            {kind:'onyx.Toolbar', style:'height:80px', components:[
+            {kind:'onyx.Toolbar', classes: "onlyToolbar", style:'height:110px', components:[
 				{kind:'ImageButton', type:'Exit', ontap:'doBack'},
 				{classes: "view-heading", content: "Einstellungen"}
 			]},
             {kind: 'Scroller', fit : true, style:'padding: 10px', components: [
-                {tag:'h2', content:'Passwort:'},
+                {tag:'p', content:'Passwort:'},
 				{
 					kind: 'onyx.InputDecorator',
 					style: 'background: #fffafa',
@@ -26,7 +24,7 @@ enyo.kind({
 					]
 				},
 				{name: 'weinre', components: [
-					{tag: 'h2', content: 'Weinre Debugger Url:'},
+					{tag: 'p', content: 'Weinre Debugger Url:'},
 					{
 						kind: 'onyx.InputDecorator',
 						style: 'background: #fffafa',
@@ -40,7 +38,7 @@ enyo.kind({
 					}
 				]},
 				{name: 'dbInbox', components: [
-					{tag: 'h2', content: 'DbInbox name'},
+					{tag: 'p', content: 'DbInbox name'},
 					{
 						kind: 'onyx.InputDecorator',
 						style: 'background: #fffafa',
@@ -53,21 +51,22 @@ enyo.kind({
 						]
 					}
 				]},
-                {tag:'h2', content:'Rendermodus:'},
+                {tag:'p', content:'Rendermodus:'},
                 {kind:'onyx.RadioGroup', components:[
                     {content:'Einfach', name:'simple', setting:'drawMode', active:true, ontap:'setSetting'},
                     {content:'Erweitert', name:'advanced', setting:'drawMode', ontap:'setSetting'}
                 ]},
-                /*{tag:'h2', content:'Sortierung der Buchstaben:'},*/
+                {tag:'p', content:'Sortierung der Buchstaben:'},
                 {kind:'onyx.RadioGroup', components:[
                     {content:'Nach Bewegungsklasse', name:'sortByClassName', setting:'levelSortMode', active:true, ontap:'setSetting'},
                     {content:'Alphabetisch', name:'sortByName', setting:'levelSortMode', ontap:'setSetting'}
-                ], showing: false},
-                {tag:'h2', content:'Spielzeit pro Kind:'},
+                ]},
+
+                {tag:'p', content:'Spielzeit pro Kind:'},
                 {kind:'Grundschrift.Views.IntegerSlider', caption:'Minuten', min:0, max:60, name:'allowedPlayTime', setting:'allowedPlayTime', onChange:'setSetting'},
-				{tag:'h2', content:'Erkennungstoleranz:'},
+				{tag:'p', content:'Erkennungstoleranz:'},
 				{kind:'Grundschrift.Views.IntegerSlider', caption:'maximal', min:30, max:80, name:'maxTolerance', setting:'maxTolerance', onChange:'setSetting'},
-                {tag:'h2', content:'Wechsel zum nächsten Buchstaben:'},
+                {tag:'p', content:'Wechsel zum nächsten Buchstaben:'},
                 {kind:'Grundschrift.Views.IntegerSlider', caption:'Erfolgreiche Versuche', min:5, max:60, step:5, name:'maxSessions', setting:'maxSessions', onChange:'setSetting'}
             ]}
         //]}

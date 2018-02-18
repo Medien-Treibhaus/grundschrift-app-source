@@ -25,25 +25,29 @@ enyo.kind({
 		onGroupsLoaded: 'groupsLoaded'
 	},
     components:[
-        {kind:'onyx.Toolbar', style:'height:80px', components:[
+        {kind:'onyx.Toolbar', classes: "adminToolbar", style:'height:60px', components:[
 			{kind:'ImageButton', type:'Exit', ontap:'doBack'},
-			//{kind:"onyx.Button", content:"Statistik", ontap:"statisticsTap"},
-			{kind:"onyx.Button", content:"Speichern", ontap:"saveTap"},
-			{kind:"onyx.Button", content:"Speichern und zum Hauptmenü", ontap:"saveAndToMainMenu"},
-			{kind:"onyx.Button", content:"Löschen", ontap:"confirmDelete"},
-			{classes: "view-heading", content: "Benutzer bearbeiten"}
+
+			{classes: "view-heading", content: "Benutzer"}
+        ]},
+        {kind:'onyx.Toolbar', classes: "lastToolbar", style:'height:80px;', components:[
+                 {kind:"onyx.Button", content:"Statistik", ontap:"statisticsTap"},
+			           {kind:"onyx.Button", content:"Speichern", ontap:"saveTap"},
+			        /*   {kind:"onyx.Button", content:"Speichern und zum Hauptmenü", ontap:"saveAndToMainMenu"}, */
+			           {kind:"onyx.Button", content:"Löschen", ontap:"confirmDelete"}
+
         ]},
         {kind:'Scroller', fit:true, components:[
-            {kind:'onyx.Groupbox', style: "width: 50%; margin: 10pt auto; background:#fffafa", components:[
+            {kind:'onyx.Groupbox', style: "width: 85%; margin: 10pt auto; background:#fffafa", components:[
                 {kind: 'onyx.InputDecorator', components:[
 					{content:'Name:', style:'display:inline-block;width:100px'},
                     {kind:'onyx.Input', name:'name', onkeyup:'keyup'}
                 ]},
                 {kind: 'onyx.InputDecorator', components: [
 					{content:'Linkshänder:', style:'display:inline-block;width:100px'},
-                    {kind:'onyx.Checkbox', name:'leftHand', style:'margin-right:3pt', onchange: 'setLeftHandPathsVisibility'},
+                    {kind:'onyx.Checkbox', name:'leftHand', style:'margin-right:3pt'/*, onchange: 'setLeftHandPathsVisibility'},
 					{content:'Alternative Bewegungsabläufe:', name:'leftHandPathsLabel', style:'display:inline-block;margin: 0 10px'},
-					{kind:'onyx.Checkbox', name:'leftHandPaths', style:'margin-right:3pt'}
+					{kind:'onyx.Checkbox', name:'leftHandPaths', style:'margin-right:3pt'*/}
 
                 ]},
 
@@ -163,11 +167,11 @@ enyo.kind({
 		}
 	},
 
-	setLeftHandPathsVisibility: function() {
+	/*setLeftHandPathsVisibility: function() {
 		this.$.leftHandPaths.setShowing(this.$.leftHand.getValue());
 		this.$.leftHandPathsLabel.setShowing(this.$.leftHand.getValue());
 
-	},
+	},*/
 
 
 	/**
@@ -181,7 +185,7 @@ enyo.kind({
 			this.$.croppedImage.setSrc(this.image || 'assets/images/rememberMeBackside' + (this.child.gender == 'f' ? '_f' : '') + '.png');
 			this.$.name.setValue(this.child.name);
 			this.$.leftHand.setValue(this.child.leftHand);
-			this.$.leftHandPaths.setValue(this.child.getPreference('leftHandPaths.default') || false);
+			/*this.$.leftHandPaths.setValue(this.child.getPreference('leftHandPaths.default') || false);*/
 			this.password.length = 0;
 
 			this.$.genderUndefined.setActive(this.child.gender !== 'm' && this.child.gender !== 'f');
@@ -302,7 +306,7 @@ enyo.kind({
 	saveChild: function(context, callback) {
 		this.child.name = this.$.name.getValue();
 		this.child.password = this.password;
-		this.child.setPreference('leftHandPaths.default', this.$.leftHandPaths.getValue() || false);
+		/*this.child.setPreference('leftHandPaths.default', this.$.leftHandPaths.getValue() || false);*/
 		this.child.imageUrl = this.image;
 		this.child.leftHand = this.$.leftHand.getValue();
 		this.child._lastChange = Date.now();
@@ -319,12 +323,12 @@ enyo.kind({
 			this.bubble('onChildrenChanged');
 			this.bubble('onBack');
 		});
-    },
+  }/*,
 
 	saveAndToMainMenu: function() {
 		this.saveChild(this, function () {
 			this.bubble('onChildrenChanged');
 			this.bubble('onBackToChildMenu');
 		});
-	}
+	}*/
 });

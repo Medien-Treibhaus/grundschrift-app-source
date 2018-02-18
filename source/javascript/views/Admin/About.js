@@ -6,19 +6,19 @@ enyo.kind({
 	},
 	components: [
 		{
-			kind:'onyx.Toolbar',
+			kind:'onyx.Toolbar',  classes: "onlyToolbar",
 			components:[
 				{
 					kind:'ImageButton',
 					type:'Exit',
 					ontap:'doBack'
 				},
-				{classes: 'view-heading', content: 'Über diese Anwendung'}
+				{classes: 'view-heading', content: 'ÜBER DIESE APP'}
 			]
 		},
 		{
 			kind:'Scroller',
-			style: 'padding: 20px;',
+			style: 'padding: 0 20px 20px 20px;',
 			fit:true,
 			components:[
 				{

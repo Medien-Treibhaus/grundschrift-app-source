@@ -31,7 +31,7 @@ enyo.kind({
 
     components:[
         {kind:"FittableRows", style:"width:33%", components:[
-            {kind:"onyx.Toolbar", style:"height:80px", components:[
+            {kind:"onyx.Toolbar", classes: "onlyToolbar", components:[
                 {kind:'ImageButton', type:'Exit', ontap:'doBack'},
 				{classes: "view-heading", content: "Statistik"}
             ]},
@@ -39,11 +39,13 @@ enyo.kind({
 
         ]},
         {kind:"FittableRows", style:"width:67%;height:100%", components:[
-            {kind:"onyx.Toolbar", style:"height:80px", components:[
+            {kind:"onyx.Toolbar", classes: "onlyToolbar", components:[
+                {name: "versuch", content: "Versuch Nr.:"},
+                  {name:"sessionIndex", content:0},
+                  {kind:"onyx.Button", name:"replay", disabled:true, content:"Abspielen", ontap:"replay"},
                 {kind:"onyx.Button", name:"prev", disabled:true, content:"Zurück", value:-1, ontap:"changeSession"},
-                {name:"sessionIndex", content:0},
-                {kind:"onyx.Button", name:"next", disabled:true, content:"Weiter", value:1, ontap:"changeSession"},
-                {kind:"onyx.Button", name:"replay", disabled:true, content:">", ontap:"replay"}
+                {kind:"onyx.Button", name:"next", disabled:true, content:"Weiter", value:1, ontap:"changeSession"}
+
             ]},
             {kind:"Grundschrift.Views.Admin.Graph", fit:true}
         ]}
@@ -184,5 +186,3 @@ enyo.kind({
         this.$.sessionTree.render();
     }
 });
-
-
