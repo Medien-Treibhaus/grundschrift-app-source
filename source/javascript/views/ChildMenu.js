@@ -23,7 +23,8 @@ enyo.kind({
     components:[
         {kind:'onyx.Toolbar', components:[
             //{kind: 'ImageButton', type: 'application-exit', ontap: 'doBack'},
-            {kind:'ImageButton', type:'Settings', ontap:'doSettingsClicked'}
+            {kind:'ImageButton', type:'Settings', ontap:'doSettingsClicked'},
+            {classes: "children-heading", content: "WER SPIELT?"}
         ]},
         {kind:'Grundschrift.Views.ChildGrid', fit:true, onChildSelected: 'childSelected'}
     ],

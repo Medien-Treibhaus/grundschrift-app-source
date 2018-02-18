@@ -96,9 +96,9 @@ enyo.kind({
         this.canvas.width = this.backgroundWidth;
         this.canvas.height = this.backgroundHeight;
 
-        this.$.wrapper.applyStyle('margin-top', (cBounds.height - this.backgroundHeight) / 2 + 'px');
+      //  this.$.wrapper.applyStyle('margin-top', (cBounds.height - this.backgroundHeight) / 2 + 'px');
 
-		//this.$.wrapper.applyStyle('height', document.height + 'px');
+		this.$.wrapper.applyStyle('height', document.height + 'px');
 
         var bounds = this.$.canvas.getBounds();
 

@@ -27,7 +27,8 @@ enyo.kind({
     components:[
         {kind:'onyx.Toolbar', components:[
             {kind:'ImageButton', type:'Exit', ontap:'doBack'},
-            {kind:'ImageButton', type:'Refresh', ontap:'reset'}
+            {kind:'ImageButton', type:'Refresh', ontap:'reset'},
+            {classes: "password-heading", content: "PASSWORT EINGEBEN!"}
         ]},
         {kind:'Control', classes:'password', components:[
             {classes:'inputImages', components:[
