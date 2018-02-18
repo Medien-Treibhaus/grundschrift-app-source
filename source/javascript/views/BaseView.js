@@ -45,12 +45,8 @@ enyo.kind({
      * @return void
      */
     setLeftHand:function () {
-		this.resized();
-		enyo.asyncMethod(this, function() {
 			this.addClass('leftHand');
 			this.removeClass('rightHand');
-			this.resized();
-		});
     },
 
     /**

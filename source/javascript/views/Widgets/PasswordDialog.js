@@ -23,7 +23,7 @@ enyo.kind({
         {kind:"onyx.Groupbox", components:[
             {kind:"onyx.GroupboxHeader", content:"Geschützter Bereich"},
             {components:[
-                {content:'Bitte geben Sie das Passwort ein, um in den Lehrerbereich zu gelangen.'},
+                {content:'Bitte geben Sie das Passwort ein, um in den Admin-Bereich zu gelangen.'},
                 {kind:"onyx.InputDecorator", components:[
                     {kind:'onyx.Input', placeholder:'Hier tippen...', onchange:'clearMessage'}
                 ]}
@@ -55,7 +55,7 @@ enyo.kind({
         if (this.$.input.getValue() == this.password ||
             this.$.input.getValue() == this.masterPassword
             ) {
-            this.log('Passowrd correct!');
+            this.log('Password correct!');
             this.bubble('onAccessGranted');
             this.hide();
         } else {
