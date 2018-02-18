@@ -55,15 +55,10 @@ enyo.kind({
 			{kind:'FittableRows', name: 'controlSide', style:'width:20%;min-width:257px', components:[
 				{kind:'onyx.Toolbar', name: 'sideBarHeader', classes:'sideBarHeader', components:[
 					{kind:'ImageButton', type:'Exit', ontap:'doBack'},
-					{
-						kind: 'ImageButton',
-						type: 'finger',
-						ontap:'startDemo'
-
-					},
+					{kind: 'ImageButton', type: 'finger', ontap:'startDemo'},
 					{kind:'ImageButton', type:'first_aid', name: 'aidButton', classes: 'aidButton', ontap: 'toggleAid'}
 				]},
-				{name:'sideBar', fit:true, kind:"FittableRows", classes:"sideBarContent", components:[
+				{kind:"FittableRows", name:'sideBar', fit:true, classes:"sideBarContent", components:[
 					{name:'illustrations', fit: true},
 					{kind:'Scroller', vertical: 'hidden', touchOverscroll: false, classes:'variants', components:[
 						{name:'variants'}
@@ -78,7 +73,7 @@ enyo.kind({
 				}
 			]},
 			{classes: 'numberImage', name: 'numberImage'},
-			{classes: 'sessionStars', kind:'Grundschrift.Views.SessionStars', max:5, size:48, onAnimationEnd:'resetCanvas', animation: true}
+			{kind:'Grundschrift.Views.SessionStars', classes: 'sessionStars', max:5, size:30, onAnimationEnd:'resetCanvas', animation: true}
 
 		]},
     ],
@@ -239,12 +234,14 @@ enyo.kind({
     },
 
     /**
-     * Triggers a resize of the illustrations
+     *Resizes canvasSide and
+     *Triggers a resize of the illustrations
      * @protected
      * @returns void
      */
     resizeHandler:function () {
-		this.$.canvasSide.applyStyle('width', (document.width - this.$.controlSide.getBounds().width) + 'px');
+		this.$.canvasSide.applyStyle('width', (window.innerWidth - this.$.controlSide.getBounds().width) + 'px');
+
         this.inherited(arguments);
         enyo.asyncMethod(this, 'resizeIllustrations');
     },
