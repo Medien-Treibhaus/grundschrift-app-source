@@ -46,12 +46,17 @@
     }
   }
 
+&.leftHand {
+  .imageButton {
+    float: right;
+  }
+}
   &.leftHand {
     .categoryMenu {
       .gridItemContainer {
         text-align: right;
         .categoryMenuItem {
-          border-width: 0 @marginWidth / 2 @marginWidth / 2 @marginWidth / 2;
+          border-width: 2 @marginWidth / 2 @marginWidth / 2 @marginWidth / 0;
           padding: @marginWidth @marginWidth / 2 @marginWidth / 2 @marginWidth / 2;
 
           border-bottom-left-radius: 5px;

@@ -4,12 +4,19 @@
   .bordered;
   .rounded;
   border-color: transparent;
+  float: left;
+    margin-top: 5px;
   &:active {
-    background-color: @highlightColor;
+    transform: scale(1.1);
   }
   padding: 0px;
   border-width: 0;
   height: @iconSize;
   margin: 0;
   margin-right: @marginWidth; //background: @backgroundColor;
+}
+
+.sideBarHeader .imageButton {
+  float:none;
+  margin-right: 8px;
 }

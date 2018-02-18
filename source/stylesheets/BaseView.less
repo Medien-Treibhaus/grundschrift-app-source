@@ -4,14 +4,20 @@
   height: 100%;
   background: @backgroundColor;
   div.onyx-toolbar {
-    background-image: none;
+
     background-color: @green;
     border: 0px none;
-    padding: 4px;
+    background-image: url('@{assets-url}/images/sideBarBorder_bottom.png');
+    border: 0px none;
+    padding-bottom: 25px;
+    padding-top: 20px;
+    padding-left: 20px;
+    height: 120px;
   }
   &.leftHand .enyo-fittable-columns-layout,
   &.leftHand.enyo-fittable-columns-layout {
     direction: rtl;
+    text-align: right;
     div.onyx-toolbar {
       text-align: right;
     }
@@ -92,6 +98,9 @@
     }
   }
   &.leftHand {
+    .imageButton {
+      float: right;
+    }
     div.sideBarHeader {
       background-image: url('@{assets-url}/images/sideBarBorder_left.png');
       background-position: left bottom;
@@ -117,6 +126,36 @@
 }
 
 .adminBaseView {
-  background-image: url('@{assets-url}/images/admin_background.png');
+    background-color: #fff;
+    //background-image: url('@{assets-url}/images/admin_background.png');
 }
 
+/* Popup Password Dialog */
+
+#gs-app_passwordDialog {
+  background: #fff;
+  margin: 15px;
+  left:0 !important;
+}
+#gs-app_passwordDialog_groupboxHeader {
+background: #fff;
+color: #333;
+font-family: "Grundschrift";
+font-size: 30px;
+}
+
+#gs-app_passwordDialog_control {
+  border: 0px;
+}
+#gs-app_passwordDialog_control2 {
+  color: #333;
+    margin: 15px;
+}
+#gs-app_passwordDialog_inputDecorator {
+  background: #eee;
+  margin: 15px;
+}
+#gs-app_passwordDialog_toolbar {
+  background: #fff;
+    border: 0px;
+}

@@ -1,9 +1,9 @@
-@import "../variables";
+@import "../variables.less";
 
 .admin {
 
   font-size: 22px;
-  font-family: Fibel;
+  font-family: Arial;
 
   .menu {
     .onyx-menu-item {
@@ -28,4 +28,58 @@
     width: 100%;
   }
 
+}
+
+.menu div.onlyToolbar,
+.adminBaseView div.onlyToolbar {
+    background-color: #4c4c4c;
+    border: 0px none;
+    padding-bottom: 25px;
+    padding-top: 20px;
+    padding-left: 20px;
+height: 120px;
+background-image: url('@{admin-assets-url}/images/sideBarBorder_bottom_admin.png') !important;
+background-repeat: no-repeat;
+background-position: bottom;
+}
+
+.adminBaseView div.adminToolbar {
+  background-color: #4c4c4c;
+  border: 0px none;
+  background-image: none;
+  padding-bottom: 25px;
+  padding-top: 20px;
+  padding-left: 20px;
+  height: 70px !important;
+}
+.adminBaseView div.lastToolbar {
+    background-color: #4c4c4c;
+
+    text-align: center;
+    padding-top: 15px;
+    background-image: url('@{admin-assets-url}/images/sideBarBorder_bottom_admin.png') !important;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    border: 0;
+}
+.lastToolbar .onyx-button,
+.onyx-button:active:hover:not([disabled]) {
+  background: none;
+  box-shadow: none;
+  padding: 10px 18px;
+  height: auto;
+  font-size: 16px;
+}
+
+.enyo-unselectable {
+  background: #e1e1e1;
+}
+
+.onyx-radiobutton,
+.ony-radiobutton.active {
+  background-image: none;
+}
+
+#gs-app_adminMenu_menu_scroller {
+  background-color: #fff;
 }
