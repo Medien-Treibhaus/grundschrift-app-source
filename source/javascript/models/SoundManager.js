@@ -53,12 +53,20 @@ enyo.singleton({
             .replace(/ö/g, 'oe')
             .replace(/ß/g, 'sz');
     },
-    play: function (name) {
+      play: function (name) {
         if (this.deviceReady && this.index) {
             name = this.replaceUmlauts(name);
-            this.stop();
+            if (typeof playingMedia !== 'undefined') {
+              playingMedia.stop();
+              console.log('Former sound stopped!');
+
+            //  playingMedia.release();
+            //  console.log('Former sound released!');
+            };
+        // this.stop();
             if (this.media[name]) {
-                return this.media[name].play();
+              playingMedia = this.media[name]
+                return playingMedia.play();
             }
         }
     },
